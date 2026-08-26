@@ -1,6 +1,6 @@
 namespace MyRecipeBook.Communication.Requests.UserAccount;
 
-public class RegisterUserAccountRequest
+public class RegisterUserRequest
 {   
     public string Name { get; set; }
 
