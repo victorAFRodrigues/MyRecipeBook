@@ -38,4 +38,7 @@
     <data name="UNKNOWN_ERROR" xml:space="preserve">
         <value>Erro desconhecido.</value>
     </data>
+    <data name="PASSWORD_EMPTY" xml:space="preserve">
+        <value>A senha não pode ser vazia</value>
+    </data>
 </root>
