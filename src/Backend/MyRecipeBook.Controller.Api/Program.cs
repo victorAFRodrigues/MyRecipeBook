@@ -10,7 +10,15 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddLocalizationConfig();
 
-builder.Services.AddMvc(option => option.Filters.Add<ExceptionFilter>()); // exception filter
+// exception filter
+builder.Services.AddMvc(option => option.Filters.Add<ExceptionFilter>()); 
+
+// adiciona configuração para deixar as rotas com nome minusculo
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+});   
 
 var app = builder.Build();
 
