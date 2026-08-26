@@ -60,7 +60,7 @@ namespace MyRecipeBook.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email is invalid, please check the field and try again.
+        ///   Looks up a localized string similar to The email is invalid, please check the field and try again..
         /// </summary>
         public static string EMAIL_IS_INVALID {
             get {
@@ -69,7 +69,7 @@ namespace MyRecipeBook.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email is required.
+        ///   Looks up a localized string similar to The email is required..
         /// </summary>
         public static string EMAIL_IS_REQUIRED {
             get {
@@ -78,7 +78,7 @@ namespace MyRecipeBook.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user name is required.
+        ///   Looks up a localized string similar to The user name is required..
         /// </summary>
         public static string NAME_IS_REQUIRED {
             get {
@@ -87,11 +87,20 @@ namespace MyRecipeBook.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password must contain a minimum of 7 characters.
+        ///   Looks up a localized string similar to Password must contain a minimum of 7 characters..
         /// </summary>
         public static string PASSWORD_IS_SHORT {
             get {
                 return ResourceManager.GetString("PASSWORD_IS_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown error..
+        /// </summary>
+        public static string UNKNOWN_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
             }
         }
     }

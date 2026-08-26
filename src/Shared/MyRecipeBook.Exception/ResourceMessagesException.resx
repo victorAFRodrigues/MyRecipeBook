@@ -24,15 +24,18 @@
         </value>
     </resheader>
     <data name="NAME_IS_REQUIRED" xml:space="preserve">
-        <value>The user name is required</value>
+        <value>The user name is required.</value>
     </data>
     <data name="EMAIL_IS_REQUIRED" xml:space="preserve">
-        <value>The email is required</value>
+        <value>The email is required.</value>
     </data>
     <data name="EMAIL_IS_INVALID" xml:space="preserve">
-        <value>The email is invalid, please check the field and try again</value>
+        <value>The email is invalid, please check the field and try again.</value>
     </data>
     <data name="PASSWORD_IS_SHORT" xml:space="preserve">
-        <value>Password must contain a minimum of 7 characters</value>
+        <value>Password must contain a minimum of 7 characters.</value>
+    </data>
+    <data name="UNKNOWN_ERROR" xml:space="preserve">
+        <value>Unknown error.</value>
     </data>
 </root>
