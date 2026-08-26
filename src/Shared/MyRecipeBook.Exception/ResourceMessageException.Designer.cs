@@ -21,14 +21,14 @@ namespace MyRecipeBook.Exception {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceMenssageException {
+    internal class ResourceMessageException {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceMenssageException() {
+        internal ResourceMessageException() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace MyRecipeBook.Exception {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyRecipeBook.Exception.ResourceMenssageException", typeof(ResourceMenssageException).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyRecipeBook.Exception.ResourceMessageException", typeof(ResourceMessageException).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -56,6 +56,42 @@ namespace MyRecipeBook.Exception {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email is invalid, please check the field and try again.
+        /// </summary>
+        internal static string EMAIL_IS_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_IS_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email is required.
+        /// </summary>
+        internal static string EMAIL_IS_REQUIRED {
+            get {
+                return ResourceManager.GetString("EMAIL_IS_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user name is required.
+        /// </summary>
+        internal static string NAME_IS_REQUIRED {
+            get {
+                return ResourceManager.GetString("NAME_IS_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must contain a minimum of 7 characters.
+        /// </summary>
+        internal static string PASSWORD_IS_SHORT {
+            get {
+                return ResourceManager.GetString("PASSWORD_IS_SHORT", resourceCulture);
             }
         }
     }
