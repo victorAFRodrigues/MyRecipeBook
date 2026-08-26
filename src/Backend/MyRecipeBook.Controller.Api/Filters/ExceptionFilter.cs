@@ -4,7 +4,7 @@ using MyRecipeBook.Communication.Responses;
 using MyRecipeBook.Exception;
 using MyRecipeBook.Exception.ExceptionsBase;
 
-namespace MyRecipeBook.Api.Filters;
+namespace MyRecipeBook.Controller.Api.Filters;
 
 public class ExceptionFilter : IExceptionFilter
 {

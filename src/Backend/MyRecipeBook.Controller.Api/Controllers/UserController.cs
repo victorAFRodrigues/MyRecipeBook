@@ -1,12 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
+using MyRecipeBook.Application.UseCases.User.Register;
+using MyRecipeBook.Communication.Requests.UserAccount;
 
 namespace MyRecipeBook.Controller.Api.Controllers;
 
-public class UserController : Controller
+[Route("api/[controller]")]
+[ApiController]
+public class UserController : ControllerBase
 {
-    // GET
-    public IActionResult Index()
+    [HttpPost]
+    public IActionResult Register([FromBody] RegisterUserRequest registerUserRequest)
     {
-        return View();
+        var useCase = new RegisterUserUseCase();
+    
+        useCase.Execute(registerUserRequest);
+    
+        return Created();
     }
 }

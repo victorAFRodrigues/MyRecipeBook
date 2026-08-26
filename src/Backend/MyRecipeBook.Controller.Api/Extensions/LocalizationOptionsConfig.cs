@@ -1,20 +1,25 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 
-namespace MyRecipeBook.Api.Config;
+namespace MyRecipeBook.Controller.Api.Extensions;
 
-public class LocalizationOptionsConfig
+public static class LocalizationExtensions
 {
     /// <summary>
-    ///  Set Localization Configs
+    ///  Registra e configura a localização (i18n) da aplicação
     /// </summary>
-    /// <param name="options">wait for RequestLocalizationOptions</param>
-    internal static void Configure(RequestLocalizationOptions options)
+    public static IServiceCollection AddLocalizationConfig(this IServiceCollection services)
     {
-        var supportedCultures = new List<CultureInfo> { new("en"), new("pt-BR") };
-        options.DefaultRequestCulture = new RequestCulture("en");
-        options.SupportedCultures = supportedCultures;
-        options.SupportedUICultures = supportedCultures;
-        options.RequestCultureProviders.Add(new CookieRequestCultureProvider());
+        services.Configure<RequestLocalizationOptions>(options =>
+        {
+            var supportedCultures = new List<CultureInfo> { new("en"), new("pt-BR") };
+            
+            options.DefaultRequestCulture = new RequestCulture("en");
+            options.SupportedCultures = supportedCultures;
+            options.SupportedUICultures = supportedCultures;
+            options.RequestCultureProviders.Add(new CookieRequestCultureProvider());
+        });
+
+        return services;
     }
 }
