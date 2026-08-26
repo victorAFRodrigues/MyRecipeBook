@@ -21,7 +21,7 @@ namespace MyRecipeBook.Exception {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceMessagesException {
+    public class ResourceMessagesException {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace MyRecipeBook.Exception {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyRecipeBook.Exception.ResourceMessagesException", typeof(ResourceMessagesException).Assembly);
@@ -50,7 +50,7 @@ namespace MyRecipeBook.Exception {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace MyRecipeBook.Exception {
         /// <summary>
         ///   Looks up a localized string similar to The email is invalid, please check the field and try again.
         /// </summary>
-        internal static string EMAIL_IS_INVALID {
+        public static string EMAIL_IS_INVALID {
             get {
                 return ResourceManager.GetString("EMAIL_IS_INVALID", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace MyRecipeBook.Exception {
         /// <summary>
         ///   Looks up a localized string similar to The email is required.
         /// </summary>
-        internal static string EMAIL_IS_REQUIRED {
+        public static string EMAIL_IS_REQUIRED {
             get {
                 return ResourceManager.GetString("EMAIL_IS_REQUIRED", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace MyRecipeBook.Exception {
         /// <summary>
         ///   Looks up a localized string similar to The user name is required.
         /// </summary>
-        internal static string NAME_IS_REQUIRED {
+        public static string NAME_IS_REQUIRED {
             get {
                 return ResourceManager.GetString("NAME_IS_REQUIRED", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace MyRecipeBook.Exception {
         /// <summary>
         ///   Looks up a localized string similar to Password must contain a minimum of 7 characters.
         /// </summary>
-        internal static string PASSWORD_IS_SHORT {
+        public static string PASSWORD_IS_SHORT {
             get {
                 return ResourceManager.GetString("PASSWORD_IS_SHORT", resourceCulture);
             }
