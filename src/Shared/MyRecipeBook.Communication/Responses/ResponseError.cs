@@ -6,5 +6,7 @@ public class ResponseError
 
     public ResponseError(List<string> errorMessages) => Errors = errorMessages;
     
+    public ResponseError(IReadOnlyCollection<string> errorMessages) => Errors = [.. errorMessages]; // Adiciona suporte a IReadOnlyCollection
+    
     public ResponseError(string errorMessage) =>  Errors = [errorMessage];
 }
