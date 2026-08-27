@@ -1,5 +1,7 @@
+using MyRecipeBook.Application;
 using MyRecipeBook.Controller.Api.Extensions;
 using MyRecipeBook.Controller.Api.Filters;
+using MyRecipeBook.Infrastructure;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +20,11 @@ builder.Services.Configure<RouteOptions>(options =>
 {
     options.LowercaseUrls = true;
     options.LowercaseQueryStrings = true;
-});   
+});
+
+builder.Services.AddInfrastructure();
+
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
