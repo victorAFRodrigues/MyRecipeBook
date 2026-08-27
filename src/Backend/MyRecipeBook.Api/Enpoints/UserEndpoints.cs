@@ -11,12 +11,9 @@ public static class UserEndpoints
         var routeGroup = app.MapGroup("/api/user");
 
         routeGroup.MapPost("", Register);
-
     }
 
-    private static IResult Register([FromBody] RegisterUserRequest registerUserRequest){
-        var useCase = new RegisterUserUseCase();
-    
+    private static IResult Register([FromBody] RegisterUserRequest registerUserRequest, [FromServices] IRegisterUserUseCase useCase){
         useCase.Execute(registerUserRequest);
     
         return Results.Created();
