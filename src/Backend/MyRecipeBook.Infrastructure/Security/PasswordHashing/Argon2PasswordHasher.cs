@@ -1,6 +1,6 @@
 namespace MyRecipeBook.Infrastructure.Security.PasswordHashing;
 
-public class Argon2PasswordHashing
+internal sealed class Argon2PasswordHasher
 {
     
 }
