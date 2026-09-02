@@ -1,6 +1,14 @@
-namespace MyRecipeBook.Infrastructure.DataAcess;
+using Microsoft.EntityFrameworkCore;
+using MyRecipeBook.Domain.Entities;
 
-public class MyRecipeBookDbContext
+namespace MyRecipeBook.Infrastructure.Data;
+
+internal class MyRecipeBookDbContext(DbContextOptions<MyRecipeBookDbContext> options) : DbContext(options)
 {
-    
+    public DbSet<User> Users { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+    }
 }

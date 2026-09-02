@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // adiciona todas as configuracoes pertinentes SOMENTE a API
 builder.Services.AddControllerApiExtension();
 
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddApplication();
 
