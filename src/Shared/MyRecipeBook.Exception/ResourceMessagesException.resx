@@ -41,4 +41,7 @@
     <data name="PASSWORD_EMPTY" xml:space="preserve">
         <value>The password must not be empty.</value>
     </data>
+    <data name="EMAIL_ALREADY_EXISTS" xml:space="preserve">
+        <value>The email is already in use.</value>
+    </data>
 </root>

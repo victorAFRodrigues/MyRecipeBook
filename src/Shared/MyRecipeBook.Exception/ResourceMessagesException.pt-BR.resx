@@ -41,4 +41,7 @@
     <data name="PASSWORD_EMPTY" xml:space="preserve">
         <value>A senha não pode ser vazia</value>
     </data>
+    <data name="EMAIL_ALREADY_EXISTS" xml:space="preserve">
+        <value>O email já está em uso.</value>
+    </data>
 </root>
