@@ -4,9 +4,9 @@ using MyRecipeBook.Communication.Requests.UserAccount;
 
 namespace MyRecipeBook.Controller.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
     [HttpPost]
     public IActionResult Register([FromBody] RegisterUserRequest registerUserRequest, IRegisterUserUseCase useCase)
