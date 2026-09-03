@@ -15,7 +15,7 @@ builder.Services.AddLocalizationConfig();
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 builder.Services.AddProblemDetails();
 
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddScoped<RegisterUserUseCase>();
 
 var app = builder.Build();
