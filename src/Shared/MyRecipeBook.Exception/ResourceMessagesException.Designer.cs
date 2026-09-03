@@ -69,6 +69,15 @@ namespace MyRecipeBook.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The email is required..
+        /// </summary>
+        public static string EMAIL_IS_EMPTY {
+            get {
+                return ResourceManager.GetString("EMAIL_IS_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The email is invalid, please check the field and try again..
         /// </summary>
         public static string EMAIL_IS_INVALID {
@@ -78,29 +87,20 @@ namespace MyRecipeBook.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The email is required..
-        /// </summary>
-        public static string EMAIL_IS_REQUIRED {
-            get {
-                return ResourceManager.GetString("EMAIL_IS_REQUIRED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The user name is required..
         /// </summary>
-        public static string NAME_IS_REQUIRED {
+        public static string NAME_IS_EMPTY {
             get {
-                return ResourceManager.GetString("NAME_IS_REQUIRED", resourceCulture);
+                return ResourceManager.GetString("NAME_IS_EMPTY", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The password must not be empty..
         /// </summary>
-        public static string PASSWORD_EMPTY {
+        public static string PASSWORD_IS_EMPTY {
             get {
-                return ResourceManager.GetString("PASSWORD_EMPTY", resourceCulture);
+                return ResourceManager.GetString("PASSWORD_IS_EMPTY", resourceCulture);
             }
         }
         

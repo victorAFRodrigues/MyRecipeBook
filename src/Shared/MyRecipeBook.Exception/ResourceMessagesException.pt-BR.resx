@@ -23,10 +23,10 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="NAME_IS_REQUIRED" xml:space="preserve">
+    <data name="NAME_IS_EMPTY" xml:space="preserve">
         <value>O nome de usuário é obrigatório.</value>
     </data>
-    <data name="EMAIL_IS_REQUIRED" xml:space="preserve">
+    <data name="EMAIL_IS_EMPTY" xml:space="preserve">
         <value>O email é obrigatório.</value>
     </data>
     <data name="EMAIL_IS_INVALID" xml:space="preserve">
@@ -38,7 +38,7 @@
     <data name="UNKNOWN_ERROR" xml:space="preserve">
         <value>Erro desconhecido.</value>
     </data>
-    <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <data name="PASSWORD_IS_EMPTY" xml:space="preserve">
         <value>A senha não pode ser vazia</value>
     </data>
     <data name="EMAIL_ALREADY_EXISTS" xml:space="preserve">
