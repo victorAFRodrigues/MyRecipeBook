@@ -15,17 +15,21 @@ public class RegisterUserValidator : AbstractValidator<RegisterUserRequest>
           
           // Email validation
           RuleFor(user => user.Email)
-               .NotEmpty().WithMessage(ResourceMessagesException.EMAIL_IS_EMPTY);
-          When(user => !string.IsNullOrWhiteSpace(user.Email), () =>
-               RuleFor(user => user.Email)
-                    .EmailAddress().WithMessage(ResourceMessagesException.EMAIL_IS_INVALID));
+               .Cascade(CascadeMode.Stop) // Interrompe a validacao após a propagacao do primeiro erro
+               .NotEmpty()
+               .WithMessage(ResourceMessagesException.EMAIL_IS_EMPTY)
+               .EmailAddress()
+               .WithMessage(ResourceMessagesException.EMAIL_IS_INVALID);
           
           // Password validation
+          
+
           RuleFor(user => user.Password)
-               .NotEmpty().WithMessage(ResourceMessagesException.PASSWORD_IS_EMPTY);
-          When(user => !string.IsNullOrWhiteSpace(user.Password), () =>
-               RuleFor(user => user.Password)
-                    .MinimumLength(7).WithMessage(ResourceMessagesException.PASSWORD_IS_SHORT));
+               .Cascade(CascadeMode.Stop) // Interrompe a validacao após a propagacao do primeiro erro
+               .NotEmpty()
+               .WithMessage(ResourceMessagesException.PASSWORD_IS_EMPTY)
+               .MinimumLength(7)
+               .WithMessage(ResourceMessagesException.PASSWORD_IS_SHORT);
                
      }
 }
