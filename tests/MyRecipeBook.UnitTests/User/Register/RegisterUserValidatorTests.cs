@@ -1,9 +1,9 @@
-using CommonTestsUtils.Requests;
 using MyRecipeBook.Application.UseCases.User.Register;
 using MyRecipeBook.Exception;
+using MyRecipeBook.TestUtilities.Requests;
 using Shouldly;
 
-namespace Validators.Tests.User;
+namespace MyRecipeBook.UnitTests.User.Register;
 
 public class RegisterUserValidatorTests
 {
@@ -26,14 +26,17 @@ public class RegisterUserValidatorTests
         result.IsValid.ShouldBeTrue();
     }
     
-    [Fact]
-    public void ShouldHaveError_WhenNameIsEmpty()
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    [InlineData("                ")]
+    public void ShouldHaveError_WhenNameIsEmpty(string name)
     {
         // AAA
         // 1. Arrange
         var request = RegisterUserRequestBuilder.Build();
 
-        request.Name = "";
+        request.Name = name;
         
         var validator = new RegisterUserValidator();
         
@@ -50,14 +53,17 @@ public class RegisterUserValidatorTests
         });
     }
     
-    [Fact]
-    public void ShouldHaveError_WhenPasswordIsEmpty()
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    [InlineData("                ")]
+    public void ShouldHaveError_WhenPasswordIsEmpty(string password)
     {
         // AAA
         // 1. Arrange
         var request = RegisterUserRequestBuilder.Build();
 
-        request.Password = "";
+        request.Password = password;
         
         var validator = new RegisterUserValidator();
         
@@ -74,14 +80,16 @@ public class RegisterUserValidatorTests
         });
     }
     
-    [Fact]
-    public void ShouldHaveError_WhenPasswordIsShort()
+    [Theory]
+    [InlineData(1)]
+    [InlineData(6)]
+    public void ShouldHaveError_WhenPasswordIsShort(int passwordLength)
     {
         // AAA
         // 1. Arrange
         var request = RegisterUserRequestBuilder.Build();
 
-        request.Password = new string(request.Password.Take(4).ToArray());
+        request.Password =  new string('a', passwordLength);
         
         var validator = new RegisterUserValidator();
         
@@ -98,14 +106,17 @@ public class RegisterUserValidatorTests
         });
     }
     
-    [Fact]
-    public void ShouldHaveError_WhenEmailIsEmpty()
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    [InlineData("                ")]
+    public void ShouldHaveError_WhenEmailIsEmpty(string email)
     {
         // AAA
         // 1. Arrange
         var request = RegisterUserRequestBuilder.Build();
 
-        request.Email = "";
+        request.Email = email;
         
         var validator = new RegisterUserValidator();
         
@@ -122,14 +133,18 @@ public class RegisterUserValidatorTests
         });
     }
     
-    [Fact]
-    public void ShouldHaveError_WhenEmailIsInvalid()
+    [Theory]
+    [InlineData("victor.com")]
+    [InlineData("victor@")]
+    [InlineData("@")] 
+    [InlineData("@gmail.com")] 
+    public void ShouldHaveError_WhenEmailIsInvalid(string email)
     {
         // AAA
         // 1. Arrange
         var request = RegisterUserRequestBuilder.Build();
 
-        request.Email = "vafr.com";
+        request.Email = email;
         
         var validator = new RegisterUserValidator();
         

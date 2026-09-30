@@ -27,7 +27,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Backend\MyRecipeBook.Application\MyRecipeBook.Application.csproj" />
-      <ProjectReference Include="..\CommonTestsUtils\CommonTestsUtils.csproj" />
+      <ProjectReference Include="..\MyRecipeBook.TestUtilities\MyRecipeBook.TestUtilities.csproj" />
     </ItemGroup>
 
 </Project>

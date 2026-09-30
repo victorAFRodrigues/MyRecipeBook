@@ -1,7 +1,7 @@
 using Bogus;
 using MyRecipeBook.Communication.Requests.UserAccount;
 
-namespace CommonTestsUtils.Requests;
+namespace MyRecipeBook.TestUtilities.Requests;
 
 public static class RegisterUserRequestBuilder
 {
