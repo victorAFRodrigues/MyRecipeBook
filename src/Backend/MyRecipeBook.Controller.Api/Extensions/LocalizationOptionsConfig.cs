@@ -12,9 +12,9 @@ public static class LocalizationExtensions
     {
         services.Configure<RequestLocalizationOptions>(options =>
         {
-            var supportedCultures = new List<CultureInfo> { new("en"), new("pt-BR") };
+            var supportedCultures = new List<CultureInfo> { new("en-US"), new("pt-BR") };
             
-            options.DefaultRequestCulture = new RequestCulture("en");
+            options.DefaultRequestCulture = new RequestCulture("en-US");
             options.SupportedCultures = supportedCultures;
             options.SupportedUICultures = supportedCultures;
             options.RequestCultureProviders.Add(new CookieRequestCultureProvider());

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Options;
 using MyRecipeBook.Application;
 using MyRecipeBook.Controller.Api;
 using MyRecipeBook.Controller.Api.Extensions;
@@ -16,6 +17,10 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 
 var app = builder.Build();
+
+var localizationOptions =  app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>();
+
+app.UseRequestLocalization(localizationOptions.Value);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
