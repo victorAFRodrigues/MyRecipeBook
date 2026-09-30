@@ -20,7 +20,7 @@ public static class DependencyInjection
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddDbContext<MyRecipeBookDbContext>(config =>
         {
-            var connectionString = configuration.GetConnectionString("MyRecipeBookDbConnection")!;
+            var connectionString = configuration.GetConnectionString("DbConnection")!;
             
             // diferente do curso estou utilizando postgres ao inves de mysql já que é um banco que eu tenho maior familiaridade
             config.UseNpgsql(connectionString);
