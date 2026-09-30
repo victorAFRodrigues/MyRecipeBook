@@ -5,8 +5,11 @@ using System.Text.Json;
 using Castle.Core.Resource;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MyRecipeBook.Domain.Extensions;
 using MyRecipeBook.Exception;
+using MyRecipeBook.Infrastructure.Data;
 using MyRecipeBook.IntegrationTests.InlineData;
 using MyRecipeBook.TestUtilities.Requests;
 using Shouldly;
@@ -15,12 +18,18 @@ namespace MyRecipeBook.IntegrationTests.User;
 
 public class RegisterUserTests : IClassFixture<MyRecipeBookWebApplicationFactory>
 {
-    private readonly HttpClient _httpClient;
     private const string REQUEST_URI = "/users";
+    
+    private readonly HttpClient _httpClient;
+    private readonly MyRecipeBookDbContext _dbContext;
     
     public RegisterUserTests(MyRecipeBookWebApplicationFactory factory)
     {
         _httpClient = factory.CreateClient();
+
+        var scope = factory.Services.CreateScope();
+        
+        _dbContext = scope.ServiceProvider.GetRequiredService<MyRecipeBookDbContext>(); 
     }
     
     [Fact]
@@ -38,6 +47,9 @@ public class RegisterUserTests : IClassFixture<MyRecipeBookWebApplicationFactory
         var responseData = await JsonDocument.ParseAsync(responseBody);
         responseData.RootElement.GetProperty("name").GetString().ShouldBe(request.Name);
         responseData.RootElement.GetProperty("tokens").GetProperty("accessToken").GetString().ShouldBeEmpty();
+        
+        var userExist  = await _dbContext.Users.AnyAsync(user => user.Active && user.Email.Equals(request.Email) && user.Name.Equals(request.Name));
+        userExist.ShouldBeTrue();
     }
     
     [Theory]
@@ -68,6 +80,8 @@ public class RegisterUserTests : IClassFixture<MyRecipeBookWebApplicationFactory
             errorList.Count().ShouldBe(1);
             errorList.ShouldContain(error => error.GetString().IsNotEmpty() && error.GetString()!.Equals(expectedErrorMessage));
         });
-    
+        
+        var userExist  = await _dbContext.Users.AnyAsync(user => user.Active && user.Email.Equals(request.Email) && user.Name.Equals(request.Name));
+        userExist.ShouldBeFalse();
     }
 }
