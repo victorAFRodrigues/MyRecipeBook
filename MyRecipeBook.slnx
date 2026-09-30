@@ -13,6 +13,7 @@
   </Folder>
   <Folder Name="/src/UI/" />
   <Folder Name="/tests/">
+    <Project Path="tests/MyRecipeBook.IntegrationTests/MyRecipeBook.IntegrationTests.csproj" />
     <Project Path="tests/MyRecipeBook.TestUtilities/MyRecipeBook.TestUtilities.csproj" />
     <Project Path="tests/MyRecipeBook.UnitTests/MyRecipeBook.UnitTests.csproj" />
   </Folder>
