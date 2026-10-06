@@ -1,1 +1,20 @@
-<Solution />
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Backend/">
+    <Project Path="src/Backend/MyRecipeBook.Api/MyRecipeBook.Api.csproj" />
+    <Project Path="src/Backend/MyRecipeBook.Application/MyRecipeBook.Application.csproj" />
+    <Project Path="src/Backend/MyRecipeBook.Controller.Api/MyRecipeBook.Controller.Api.csproj" />
+    <Project Path="src/Backend/MyRecipeBook.Domain/MyRecipeBook.Domain.csproj" />
+    <Project Path="src/Backend/MyRecipeBook.Infrastructure/MyRecipeBook.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/MyRecipeBook.Communication/MyRecipeBook.Communication.csproj" />
+    <Project Path="src/Shared/MyRecipeBook.Exception/MyRecipeBook.Exception.csproj" />
+  </Folder>
+  <Folder Name="/src/UI/" />
+  <Folder Name="/tests/">
+    <Project Path="tests/MyRecipeBook.IntegrationTests/MyRecipeBook.IntegrationTests.csproj" />
+    <Project Path="tests/MyRecipeBook.TestUtilities/MyRecipeBook.TestUtilities.csproj" />
+    <Project Path="tests/MyRecipeBook.UnitTests/MyRecipeBook.UnitTests.csproj" />
+  </Folder>
+</Solution>
